@@ -4,7 +4,8 @@
 # print whether it is a vowel or consonant.
 
 
-a=input("Enter Character")
+a=input("Enter Character ")
+a=a.lower()
 lis=['a','e','i','o','u']
 if a in lis:
     print(a," is vowel")
