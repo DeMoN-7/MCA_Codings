@@ -30,6 +30,7 @@ class airport{
     
 }
 class flight{
+    // private attributes
     private int flightNumber;
     private String destination;
     private LocalTime departureTime;
