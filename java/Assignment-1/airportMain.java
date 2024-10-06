@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +17,23 @@ class airport{
     public void removeFlight(int flightNumber){
 
     }
-    public List<flight>
+    public List<flight>upcomingFlights(){
+
+    }
+    public List<flight>CompletedFlights(){
+        
+    }
+    public void displayDetails(){
+
+    }
 
     
 }
 class flight{
+    private int flightNumber;
+    private String destination;
+    private LocalTime departureTime;
+    private LocalTime ArrivalTime;
 
 }
 public class airportMain {
