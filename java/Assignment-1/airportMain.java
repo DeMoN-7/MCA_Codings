@@ -133,11 +133,13 @@ public class airportMain {
         Flight flight1 = new Flight("New York", LocalTime.of(23, 30), LocalTime.of(8, 30));
         Flight flight2 = new Flight("London", LocalTime.of(15, 0), LocalTime.of(20, 0));
         Flight flight3 = new Flight("Paris", LocalTime.of(10, 0), LocalTime.of(12, 0));
+        Flight flight4 = new Flight("India", LocalTime.of(3, 01), LocalTime.of(2, 0));
 
         // adding flights to airport
         airport.addFlight(flight1);
         airport.addFlight(flight2);
         airport.addFlight(flight3);
+        airport.addFlight(flight4);
 
         // displaying all flight which are at airport
         airport.displayDetails();
@@ -157,6 +159,12 @@ public class airportMain {
         // list of upcoming flights based on current time 
         System.out.println("\nList of upcoming flights\n");
         for(Flight flight:airport.upcomingFlights()){
+            flight.display();
+        }
+
+        // list of completed flights
+        System.out.println("\n List of completed flights\n");
+        for(Flight flight:airport.CompletedFlights()){
             flight.display();
         }
 
