@@ -45,10 +45,10 @@ class Flight {
 
     public void display() {
         // to display details of flight,including flight number,destination and times
-        System.out.println("Flight Number" + this.flightNumber);
-        System.out.println("Flight Destination" + this.destination);
-        System.out.println("Flight Departure time" + this.departureTime);
-        System.out.println("Flight Arrival time" + this.ArrivalTime);
+        System.out.println("Flight Number " + this.flightNumber);
+        System.out.println("Flight Destination " + this.destination);
+        System.out.println("Flight Departure time " + this.departureTime);
+        System.out.println("Flight Arrival time " + this.ArrivalTime);
     }
 
 }
@@ -129,6 +129,23 @@ public class airportMain {
         // Creating object for Airport
         airport airport=new airport("Demonic Ports");
 
+        // Creating object for flights
+        Flight flight1 = new Flight("New York", LocalTime.of(14, 30), LocalTime.of(18, 30));
+        Flight flight2 = new Flight("London", LocalTime.of(15, 0), LocalTime.of(20, 0));
+        Flight flight3 = new Flight("Paris", LocalTime.of(10, 0), LocalTime.of(12, 0));
+
+        // adding flights to airport
+        airport.addFlight(flight1);
+        airport.addFlight(flight2);
+        airport.addFlight(flight3);
+
+        // displaying all flight which are at airport
+        airport.displayDetails();
+
+        // updating arrival time of flight 1
+        flight1.updateArrival(LocalTime.of(16, 10));
+        System.out.println("\nAfter updating arrival time \n");
+        airport.displayDetails();
 
 
     }
