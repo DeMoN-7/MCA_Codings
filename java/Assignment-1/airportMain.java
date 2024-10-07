@@ -20,7 +20,7 @@ class Flight {
     }
 
     // private methods
-    private boolean upcomingFlight() {
+    boolean upcomingFlight() {
         return departureTime.isAfter(LocalTime.now());
         // this function return true if departure time is more than current time
 
@@ -83,25 +83,53 @@ class airport {
     }
 
     public void removeFlight(int flightNumber) {
+        Flight flight=findFlightByNumber(flightNumber);
+        if (flight!=null) {
+            flights.remove(flightNumber);
+            System.out.println("Flight Number: "+flightNumber+" removed");
+        }
+        else{
+            System.out.println("Flight Not Found");
+        }
 
     }
 
-    public List<flight> upcomingFlights() {
-
+    public List<Flight> upcomingFlights() {
+        List<Flight>upcomingFlights=new ArrayList<>();
+        for(Flight flight:flights){
+            if(flight.upcomingFlight()){
+                upcomingFlights.add(flight);
+            }
+        }
+        return upcomingFlights;
     }
 
-    public List<flight> CompletedFlights() {
-
+    public List<Flight> CompletedFlights() {
+        List<Flight>completedFlights=new ArrayList<>();
+        for(Flight flight:flights){
+            if(flight.isComplete()){
+                completedFlights.add(flight);
+            }
+        }
+        return completedFlights;
     }
 
     public void displayDetails() {
-
+        System.out.println("All flights at "+name+": ");
+        for(Flight flight:flights){
+            flight.display();
+        }
     }
 
 }
 
 public class airportMain {
     public static void main(String[] args) {
+
+        // Creating object for Airport
+        airport airport=new airport("Demonic Ports");
+
+
 
     }
 }
