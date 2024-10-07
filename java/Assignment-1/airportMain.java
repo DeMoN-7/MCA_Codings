@@ -147,6 +147,13 @@ public class airportMain {
         System.out.println("\nAfter updating arrival time \n");
         airport.displayDetails();
 
+        // removing flight from airport
+        airport.removeFlight(flight2.getFlightNumber());
+
+        // displaying remaining flight
+        System.out.println("\nAfter removing flight 2\n");
+        airport.displayDetails();
+
 
     }
 }
