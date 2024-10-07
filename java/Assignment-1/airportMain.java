@@ -12,7 +12,7 @@ class Flight {
     private LocalTime ArrivalTime;
 
     // Constructor to assign values
-    Flight(String destination, LocalTime depart, LocalTime arrival) {
+    Flight(String destination, LocalTime arrival, LocalTime depart) {
         this.ArrivalTime = arrival;
         this.departureTime = depart;
         this.destination = destination;
@@ -85,7 +85,7 @@ class airport {
     public void removeFlight(int flightNumber) {
         Flight flight=findFlightByNumber(flightNumber);
         if (flight!=null) {
-            flights.remove(flightNumber);
+            flights.remove(flight);
             System.out.println("Flight Number: "+flightNumber+" removed");
         }
         else{
@@ -130,7 +130,7 @@ public class airportMain {
         airport airport=new airport("Demonic Ports");
 
         // Creating object for flights
-        Flight flight1 = new Flight("New York", LocalTime.of(14, 30), LocalTime.of(18, 30));
+        Flight flight1 = new Flight("New York", LocalTime.of(23, 30), LocalTime.of(8, 30));
         Flight flight2 = new Flight("London", LocalTime.of(15, 0), LocalTime.of(20, 0));
         Flight flight3 = new Flight("Paris", LocalTime.of(10, 0), LocalTime.of(12, 0));
 
@@ -154,6 +154,11 @@ public class airportMain {
         System.out.println("\nAfter removing flight 2\n");
         airport.displayDetails();
 
+        // list of upcoming flights based on current time 
+        System.out.println("\nList of upcoming flights\n");
+        for(Flight flight:airport.upcomingFlights()){
+            flight.display();
+        }
 
     }
 }
