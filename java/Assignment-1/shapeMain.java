@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
-// Interface for Shape with area method
 interface Shape {
     double area();
 }
 
-// Circle class implementing Shape interface
 class Circle implements Shape {
     double radius;
 
@@ -18,7 +16,6 @@ class Circle implements Shape {
     }
 }
 
-// Rectangle class implementing Shape interface
 class Rectangle implements Shape {
     double length, width;
 
@@ -32,7 +29,6 @@ class Rectangle implements Shape {
     }
 }
 
-// Triangle class implementing Shape interface
 class Triangle implements Shape {
     double base, height;
 
@@ -45,8 +41,6 @@ class Triangle implements Shape {
         return 0.5 * base * height;
     }
 }
-
-// Main class with simplified structure
 public class shapeMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -56,7 +50,7 @@ public class shapeMain {
             int choice = sc.nextInt();
 
             if (choice == 4) {
-                System.out.println("Exiting...");
+                System.out.println("Exit");
                 break;
             }
 
