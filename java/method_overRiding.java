@@ -13,6 +13,7 @@ public class method_overRiding {
         animal a1=new dog();
         a1.eat();
         int arr[]={1,2};
-        int arr[]={1,2};
+        // int arr[]={1,2};
+        // just a temp commit line
     }
 }
