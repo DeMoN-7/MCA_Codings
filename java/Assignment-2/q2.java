@@ -62,7 +62,7 @@ public class q2 {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write("Sorted List of Integers:\n");
             for (int number : sortedNumbers) {
-                writer.write(number + "\n");
+                writer.write(number + " ");
             }
             writer.write("\nSum of Integers: " + sum + "\n");
             writer.write("Product of Integers: " + product + "\n");
