@@ -3,3 +3,4 @@ try:
     a.write("fdfd")
 except FileNotFoundError:
     print("file not ")
+print("File Written")
